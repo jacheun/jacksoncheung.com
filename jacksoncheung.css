@@ -1,0 +1,150 @@
+html {
+    background-color: #dbf0f0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.drift-circle {
+    will-change: transform;
+    pointer-events: none;
+}
+
+.jacksoncheung {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 100px;
+    color: #0080ff;
+    white-space: nowrap;
+    font-family:'Courier New', Courier, monospace
+}
+
+.rightCircle1 {
+    position: absolute;
+    top: -70px;
+    right: -190px;
+
+    width: 400px;
+    height: 400px;
+    background-color: #6fb9eb;
+    border-radius: 50%;
+}
+.rightCircle2 {
+    position: absolute;
+    top: 250px;
+    right: -110px;
+
+    width: 250px;
+    height: 250px;
+    background-color: #6e96a0;
+    border-radius: 50%;
+}
+.rightCircle3 {
+    position: absolute;
+    top: -110px;
+    right: 150px;
+
+    width: 300px;
+    height: 300px;
+    background-color: #225a8f;
+    border-radius: 50%;
+}
+
+.leftCircle2 {
+    position: absolute;
+    top: -100px;
+    right: 1060px;
+
+    width: 200px;
+    height: 200px;
+    background-color: #6e96a0;
+    border-radius: 50%;
+}
+.leftCircle3 {
+    position: absolute;
+    top: 110px;
+    right: 1340px;
+
+    width: 300px;
+    height: 300px;
+    background-color: #225a8f;
+    border-radius: 50%;
+}
+.leftCircle1 {
+    position: absolute;
+    top: -190px;
+    right: 1200px;
+
+    width: 400px;
+    height: 400px;
+    background-color: #6fb9eb;
+    border-radius: 50%;
+}
+
+.capsule {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    height: 50px;
+    background-color: #dee6e6;
+    border-radius: 60px;
+    border: 1px solid rgb(171, 171, 171);
+    box-shadow: 0 4px 8px #b7b7b7;
+}
+
+.capsuleText {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+}
+
+.linkedin {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family:'Courier New', Courier, monospace;
+}
+.linkedin:hover{
+    color: #7b7b7b;
+}
+
+.name {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.about {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: inherit;
+    color: #000;
+    cursor: pointer;
+    appearance: none;
+    transition: color 0.3s ease;
+}
+.about:hover, .about:focus-visible {
+    color: #7b7b7b;
+}
+
+.downArrowHead::after {
+    content: "\27E9";
+    rotate: 90deg;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 50px;
+}
