@@ -1,10 +1,25 @@
-const RADIUS = 1000;      // how close the cursor must be to affect a circle
-const MAX_TRAVEL = 100;  // px a circle moves at full influence
-const STIFFNESS = 0.01;  // higher = snappier
-const DAMPING = 0.8;     // lower = more glide (below ~0.75 starts to overshoot)
+const RADIUS = 1000;
+const MAX_TRAVEL = 100;
+const STIFFNESS = 0.01;
+const DAMPING = 0.8;
+
+// Float settings
+const FLOAT_AMP_MIN = 6;    // px
+const FLOAT_AMP_MAX = 14;   // px
+const FLOAT_SPEED_MIN = 0.0004; // radians per ms (lower = slower)
+const FLOAT_SPEED_MAX = 0.0009;
+
+const rand = (min, max) => min + Math.random() * (max - min);
 
 const circles = [...document.querySelectorAll('.drift-circle')].map(el => ({
-    el, cx: 0, cy: 0, dirX: 0, dirY: 0, x: 0, y: 0, vx: 0, vy: 0
+    el, cx: 0, cy: 0, dirX: 0, dirY: 0, x: 0, y: 0, vx: 0, vy: 0,
+    // Per-circle float parameters so they don't move in sync
+    ampX: rand(FLOAT_AMP_MIN, FLOAT_AMP_MAX),
+    ampY: rand(FLOAT_AMP_MIN, FLOAT_AMP_MAX),
+    speedX: rand(FLOAT_SPEED_MIN, FLOAT_SPEED_MAX),
+    speedY: rand(FLOAT_SPEED_MIN, FLOAT_SPEED_MAX),
+    phaseX: rand(0, Math.PI * 2),
+    phaseY: rand(0, Math.PI * 2),
 }));
 
 let mouse = null;
@@ -24,8 +39,9 @@ function measure() {
     });
 }
 
-function tick() {
+function tick(time) {
     circles.forEach(c => {
+        // --- Glide (spring physics, unchanged) ---
         let influence = 0;
         if (mouse) {
             const d = Math.hypot(mouse.x - c.cx, mouse.y - c.cy);
@@ -40,7 +56,12 @@ function tick() {
         c.x += c.vx;
         c.y += c.vy;
 
-        c.el.style.transform = `translate(${c.x}px, ${c.y}px)`;
+        // --- Float (time-based, independent of the glide) ---
+        const floatX = Math.sin(time * c.speedX + c.phaseX) * c.ampX;
+        const floatY = Math.cos(time * c.speedY + c.phaseY) * c.ampY;
+
+        // Combine only at render time
+        c.el.style.transform = `translate(${c.x + floatX}px, ${c.y + floatY}px)`;
     });
     requestAnimationFrame(tick);
 }
@@ -53,5 +74,5 @@ window.addEventListener('resize', measure);
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     measure();
-    tick();
+    requestAnimationFrame(tick);
 }
