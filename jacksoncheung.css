@@ -3,7 +3,7 @@ html {
 }
 
 html, body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .drift-circle {
@@ -156,6 +156,16 @@ html, body {
     color: #7b7b7b;
 }
 
+.jacksonDesc {
+    text-align: center;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
 .downArrow {
     position: absolute;
     top: 90%;
@@ -165,10 +175,146 @@ html, body {
 }
 
 @keyframes float {
-  from {
-    transform: translateY(1%);
-  }
-  to {
-    transform: translateY(100%);
-  }
+    from {
+        transform: translate(-50%, -50%) translateY(1%);
+    }
+    to {
+        transform: translate(-50%, -50%) translateY(100%);
+    }
+}
+
+.strec {
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 254, 254);
+    border: 4px solid black;
+    border-radius: 12px;
+    width: 700px;
+    height: 400px;
+    transition-duration: 0.3s;
+}
+.strec:hover, .strec:focus-visible {
+    background-color: #383a3d;
+}
+
+.DCSMSrec {
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 254, 254);
+    border: 4px solid black;
+    border-radius: 12px;
+    width: 700px;
+    height: 400px;
+    transition-duration: 0.3s;
+}
+.DCSMSrec:hover, .DCSMSrec:focus-visible {
+    background-color: #295291;
+}
+
+.rrec {
+    position: absolute;
+    top: 260%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 254, 254);
+    border: 4px solid black;
+    border-radius: 12px;
+    width: 700px;
+    height: 400px;
+    transition-duration: 0.3s;
+}
+.rrec:hover, .rrec:focus-visible {
+    background-color: #e60000;
+}
+
+.diverec {
+    position: absolute;
+    top: 320%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 254, 254);
+    border: 4px solid black;
+    border-radius: 12px;
+    width: 700px;
+    height: 400px;
+    transition-duration: 0.3s;
+}
+.diverec:hover, .diverec:focus-visible {
+    background-color: #1100ff;
+}
+
+.resumeButton {
+    position: absolute;
+    top: 355%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 60px;
+    border: 1px solid #ababab;
+    box-shadow: 0 4px 8px #b7b7b7;
+}
+.resume {
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family:'Courier New', Courier, monospace;
+}
+.resume:hover {
+    color: #7b7b7b;
+}
+
+.contactButton {
+    position: absolute;
+    top: 355%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 60px;
+    border: 1px solid #ababab;
+    box-shadow: 0 4px 8px #b7b7b7;
+}
+.contact {
+    position: absolute;
+    top: -5%;
+    left: 31%;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.contact:hover {
+    color: #7b7b7b;
+}
+
+.buffer {
+    position: absolute;
+    top: 360%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 10px;
 }
