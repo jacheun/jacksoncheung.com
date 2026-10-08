@@ -1,5 +1,6 @@
 html {
     background-color: #ffffff;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -9,6 +10,15 @@ html, body {
 .drift-circle {
     will-change: transform;
     pointer-events: none;
+}
+
+.surprise {
+    color: #ffffff;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 .jacksoncheung {
@@ -196,7 +206,7 @@ html, body {
     width: 700px;
     height: 400px;
     transition-duration: 0.3s;
-}
+} 
 .strec:hover, .strec:focus-visible {
     background-color: #383a3d;
 }
@@ -297,13 +307,42 @@ html, body {
 }
 .contact {
     position: absolute;
-    top: -5%;
-    left: 31%;
+    top: 26%;
+    left: 27%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    appearance: none;
     font-family:'Courier New', Courier, monospace;
     font-size: 18px;
     transition: color 0.3s ease;
 }
 .contact:hover {
+    color: #7b7b7b;
+}
+
+.notesButton {
+    position: absolute;
+    top: 355%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 60px;
+    border: 1px solid #ababab;
+    box-shadow: 0 4px 8px #b7b7b7;
+}
+.notes {
+    position: absolute;
+    top: -5%;
+    left: 17%;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.notes:hover {
     color: #7b7b7b;
 }
 
