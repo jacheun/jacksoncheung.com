@@ -1,71 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <title>Jackson Cheung</title>
-        <link rel="stylesheet" href="jacksoncheung.css">
-        <script src="jacksoncheung.js" defer></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Cheung</title>
+    <link rel="stylesheet" href="jacksoncheung.css">
+    <script src="jacksoncheung.js" defer></script>
+</head>
 
-    <body>
-        <div class="rightCircle1 drift-circle"></div>
-        <div class="rightCircle2 drift-circle"></div>
-        <div class="rightCircle3 drift-circle"></div>
+<body>
+    <!-- Decorative background circles (clipped to the first screen) -->
+    <div class="circles" aria-hidden="true">
+        <div class="circle circle--right-1 drift-circle"></div>
+        <div class="circle circle--right-2 drift-circle"></div>
+        <div class="circle circle--right-3 drift-circle"></div>
+        <div class="circle circle--left-1 drift-circle"></div>
+        <div class="circle circle--left-2 drift-circle"></div>
+        <div class="circle circle--left-3 drift-circle"></div>
+    </div>
 
-        <div class="leftCircle1 drift-circle"></div>
-        <div class="leftCircle2 drift-circle"></div>
-        <div class="leftCircle3 drift-circle"></div>
+    <header class="capsule">
+        <span class="capsule-name">Jackson Cheung</span>
+        <nav aria-label="Primary">
+            <ul class="capsule-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://www.linkedin.com/in/jacksoncheung123" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="capsule">
-            <p class="name"><strong>JACKSON CHEUNG</strong></p>
-            <p class="capsuleText">
-                <button class="about"><strong>ABOUT</strong></button>
-                <strong> | </strong>
-                <a href="https://www.linkedin.com/in/jacksoncheung123" target="_blank" class="linkedin"><strong>LINKEDIN</strong></a>
-            </p>
-        </div>
-
-        <div class="title">
-            <h1 class="jacksoncheung">
-                <strong>Jackson Cheung</strong>
-            </h1>
-        </div>
-        <div>
-            <a href="#surprise!"><img id="downArrow" class="downArrow" src="assets/downArrow.png" alt="Scroll down"></a>
-        </div>
-
-
-        <p class="jacksonDesc"><strong>Hi! I'm a second-year Informatics student at the University of Washington. I like figuring out how people use technology and making it work better for them!</strong></p>
-        
-        <p id="surprise!" class="surprise">suprise!</p>
-
-        <section>
-            <p class="studyTimer"><strong>Study Timer</strong></p>
-            <div class="strec"></div>
-
-            <p class="DCSMS"><strong>DCSMS</strong></p>
-            <div class="DCSMSrec"></div>
-
-            <p class="R"><strong>Seattle Crime Data</strong></p>
-            <div class="rrec"></div>
-
-            <p class="dive"><strong>Dive</strong></p>
-            <div class="diverec"></div>
+    <main>
+        <section class="hero">
+            <h1>Jackson Cheung</h1>
+            <p class="hero-desc">Hi! I'm a second-year Informatics student at the University of Washington. I like figuring out how people use technology and making it work better for them!</p>
+            <a class="scroll-arrow" href="#projects">
+                <img id="downArrow" src="assets/downArrow.png" alt="Scroll down to projects">
+            </a>
         </section>
 
-        <section>
-            <div class="resumeButton">
-                <a class="resume" href="https://drive.google.com/file/d/1ex8mYPBwGBFeVEp9iIui6OHrApG25VaC/view?usp=sharing" target="_blank"><strong>RESUME</strong></a>
-            </div>
-            <div class="contactButton">
-                <button class="contact" id="contact"><strong>CONTACT</strong></button>
-            </div>
-            <div class="notesButton">
-                <p class="notes"><Strong>LEAVE A NOTE!</Strong></p>
-            </div>
+        <section id="projects" class="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <ul class="project-list">
+                <li class="project-card project-card--timer">
+                    <h3>Study Timer</h3>
+                </li>
+                <li class="project-card project-card--dcsms">
+                    <h3><a href="projects/dcsms.html">DCSMS</a></h3>
+                </li>
+                <li class="project-card project-card--crime">
+                    <h3>Seattle Crime Data</h3>
+                </li>
+                <li class="project-card project-card--dive">
+                    <h3>Dive</h3>
+                </li>
+            </ul>
         </section>
-        
-        <div class="buffer"></div>
-    </body>
+
+        <section class="actions" aria-label="Links and contact">
+            <a class="pill resume" href="https://drive.google.com/file/d/1ex8mYPBwGBFeVEp9iIui6OHrApG25VaC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+            <button class="pill notes" type="button">Leave a note</button>
+            <button class="pill contact" id="contact" type="button">Contact</button>
+        </section>
+    </main>
+</body>
 </html>
