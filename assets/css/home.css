@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+:root {
+    --font-mono: 'Courier New', Courier, monospace;
+
+    --text: #000;
+    --muted: #7b7b7b;
+    --border: #ababab;
+    --shadow: #b7b7b7;
+    --accent: #0091ff;
+
+    --circle-light: #6fb9eb;
+    --circle-mid: #6e96a0;
+    --circle-dark: #225a8f;
+
+    --content-width: 700px;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-mono);
+    color: var(--text);
+    background-color: #fff;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   Background circles
+   Positions are percentages of the first screen, same as before.
+   ========================================================================== */
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    width: var(--size);
+    aspect-ratio: 1 / 1;
+    background-color: var(--color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.drift-circle {
+    will-change: transform;
+    pointer-events: none;
+}
+
+.circle--right-1 { top: -10%; right: -10%; --size: 45vh; --color: var(--circle-light); }
+.circle--right-2 { top: 22%;  right: -10%; --size: 30vh; --color: var(--circle-mid); }
+.circle--right-3 { top: -20%; right: 9%;   --size: 35vh; --color: var(--circle-dark); }
+
+.circle--left-1  { top: -20%; right: 80%;  --size: 50vh; --color: var(--circle-light); }
+.circle--left-2  { top: -12%; right: 70%;  --size: 24vh; --color: var(--circle-mid); }
+.circle--left-3  { top: 18%;  right: 90%;  --size: 35vh; --color: var(--circle-dark); }
+
+/* ==========================================================================
+   Header capsule
+   ========================================================================== */
+.capsule {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    width: min(600px, calc(100% - 2rem));
+    height: 50px;
+    padding: 0 1.5rem;
+
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.capsule-links {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.capsule-links li + li::before {
+    content: "|";
+    margin-right: 0.5rem;
+}
+
+.capsule a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.capsule a:hover,
+.capsule a:focus-visible {
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem 5rem;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.75rem, 9vw, 6.25rem);
+    color: var(--accent);
+}
+
+.hero-desc {
+    max-width: 40rem;
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-arrow img {
+    display: block;
+    animation: float 1s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to   { transform: translateY(0.75rem); }
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+}
+
+.projects h2 {
+    margin: 0;
+    font-size: 2rem;
+    
+}
+
+.project-list {
+    display: grid;
+    gap: 3.5rem;
+    width: min(var(--content-width), 100%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 7 / 4;
+    padding: 1.5rem;
+    background-color: rgb(255, 254, 254);
+    border: 4px solid #000;
+    border-radius: 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.project-card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Makes the whole card clickable, not just the title */
+.project-card a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    background-color: var(--hover);
+    color: #fff;
+}
+
+.project-card:has(a:focus-visible) {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.project-card--timer { --hover: #383a3d; }
+.project-card--dcsms { --hover: #295291; }
+.project-card--crime { --hover: #e60000; }
+.project-card--dive  { --hover: #1100ff; }
+
+/* ==========================================================================
+   Action buttons (resume / note / contact)
+   ========================================================================== */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0 1.5rem 6rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 60px;
+    box-shadow: 0 4px 8px var(--shadow);
+    color: var(--text);
+    font: bold 1.125rem var(--font-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pill:hover,
+.pill:focus-visible {
+    color: var(--muted);
+}
+
+/* ==========================================================================
+   Small screens / reduced motion
+   ========================================================================== */
+@media (max-width: 480px) {
+    .capsule {
+        padding: 0 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .scroll-arrow img { animation: none; }
+}

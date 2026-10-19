@@ -1,0 +1,62 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 400px;
+    margin-left: 400px;
+}
+h1 {
+    text-align: center;
+    margin-top: 350px;
+    color: #0091ff;
+    font-size: 36px;
+}
+
+.downArrow {
+    animation: float 1s ease-in-out infinite alternate;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes float {
+    from {
+        transform: translate(-50%, -50%) translateY(1%);
+    }
+    to {
+        transform: translate(-50%, -50%) translateY(100%);
+    }
+}
+
+.bodyHeader {
+    color: #0091ff;
+    display: flex;
+    gap: 15px;
+}
+
+.timeline {
+    text-align: right;
+}
+
+.read {
+    text-align: center;
+}
+
+.body {
+    margin-top: 600px;
+}
+.context {
+    padding-top: 50px;
+}
+.roadmap {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    border: 2px, solid, black;
+    border-radius: 10px;
+}
