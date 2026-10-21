@@ -41,21 +41,18 @@
             </dl>
 
             <section id="context">
-                <p class="section-number" aria-hidden="true">01</p>
                 <h2>Context</h2>
                 <p>GroundworkAI is a team project my team built for DubHacks 2026. We explored how street imagery and computer vision could help identify road damage and turn potential issues into reports that people can review and act on.</p>
                 <p>The project uses detection, map inspection, and repair coordination and turns it all into one workflow. The goal is to support safer, more accessible streets by helping local governments find and organize potential maintenance.</p>
             </section>
 
             <section id="problem">
-                <p class="section-number" aria-hidden="true">02</p>
                 <h2>Problem</h2>
                 <p>Finding a crack or pothole is only the first step toward repairing it. A report also needs evidence, a location, a review decision, and a way to hand the issue off to the people doing the work.</p>
                 <p>We approached this as a workflow problem: how could an image based detection become a repair task without losing the information needed to evaluate it? An AI model cannot soley predict whether a defect needs repair or how urgently a crew should respond.</p>
             </section>
 
             <section id="solution">
-                <p class="section-number" aria-hidden="true">03</p>
                 <h2>Solution</h2>
                 <p>GroundworkAI connects AI assisted detection with human review. Potential defects appear on a map, where reviewers can inspect the source image, check the highlighted damage, adjust the estimated location, and assign a repair priority.</p>
                 <div class="solution-step">
@@ -88,7 +85,6 @@
             </section>
 
             <section id="product">
-                <p class="section-number" aria-hidden="true">04</p>
                 <h2>Product</h2>
                 <p>The prototype includes a React dashboard with a Leaflet map, issue details, review controls, and a work order view. The live workflow uses FastAPI and SQLite to process imagery and preserve review decisions.</p>
                 <h3>A repeatable demo</h3>
@@ -98,7 +94,6 @@
                 <p>The central design decision is to keep people involved at the points where judgment matters: confirming the evidence, setting priority, and coordinating the response.</p>
             </section>
             <section id="whats-next">
-                <p class="section-number" aria-hidden="true">05</p>
                 <h2>So whats next?</h2>
                 <p>Since we only had 24 hours to build GroundWorkAI, there are still some limitations. For now, it runs exclusively on sample data because of our limited time and resources. With more time, we'd love to train and improve our model using a larger, more diverse dataset to make it more accurate and useful in real scenarios.</p>
 

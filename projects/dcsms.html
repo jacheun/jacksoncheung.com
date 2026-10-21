@@ -1,129 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../assets/css/dcsms.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DCSMS</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCSMS | Jackson Cheung</title>
+    <meta name="description" content="DCSMS — an INFO 380 product management case study connecting sustainability data collection, standardization, and dashboard design.">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/groundworkai.css">
+    <link rel="stylesheet" href="../assets/css/dcsms.css">
+    <script src="../assets/js/image-viewer.js" defer></script>
 </head>
+<body>
+    <header class="capsule">
+        <a class="capsule-name" href="../index.html">Jackson Cheung</a>
+        <nav aria-label="Primary">
+            <ul class="capsule-links">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://www.linkedin.com/in/jacksoncheung123" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <body>
-        <section>
-            <img class="roadmap" src="../assets/DCSMSRoadmap.png" alt="Data Center Sustainability Management System roadmap">
+    <main>
+        <section class="hero project-hero" aria-labelledby="project-heading">
+            <h1 id="project-heading">DCSMS</h1>
+            <p class="hero-desc">Data Center Sustainability Management System.</p>
+            <p class="project-summary">Connecting fragmented environmental data to a clearer view of data center sustainability.</p>
+            <a class="pill project-demo" href="https://www.figma.com/proto/12B1SHe49qGJ7PhPbhmBND/INFO-380-Prototype?node-id=1-3794&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1" target="_blank" rel="noopener noreferrer">View prototype <span aria-hidden="true">↗</span></a>
+            <a class="scroll-arrow" href="#context">
+                <img src="../assets/downArrow.png" alt="Read the DCSMS case study">
+            </a>
         </section>
-        <section>
-            <h1>Data Center Sustainability Mangement System</h1>
-        </section>
-        <a href="#context"><img id="downArrow" class="downArrow" src="../assets/downArrow.png" alt="Scroll down"></a>
-        <section class="bodyHeader">
-            <div>
-            <p class="classProject"><strong>Class Project</strong></p>
-            <p class="read"><strong>X Minute Read</strong></p>
-            <p class="timeline"><strong>Timeline</strong></p>
-            </div>
-        </section>
-        <section class="body">
-            <section>
-                <h2 id="context" class="context">Context</h2>
-                <p>
-                    DCSMS (Data Center Sustainability Management System), a project I worked on in INFO 380, is built
-                    around a mock client, Meridian Retail Group. The goal was to design a system that helps a company
-                    track and manage the sustainability of its data centers. I wrote the product documentation, including
-                    user personas for sustainability analysts, data center facility managers, the Chief Sustainability
-                    Officer, and compliance and legal teams, along with strategic priorities and a three-sprint plan
-                    covering data ingestion, normalization, and Azure dashboarding. I also built a mock Excel dataset to
-                    represent the kind of data the system would handle.
-                </p>
+        <article class="case-study" aria-label="DCSMS case study">
+            <dl class="project-facts">
+                <div><dt>Project</dt><dd>INFO 380 · Spring 2026 · Team design project</dd></div>
+                <div><dt>Tools</dt><dd>Figma, Jira, Excel, Miro</dd></div>
+            </dl>
+            <section id="context">
+                <h2>Context</h2>
+                <p>DCSMS is a team project from INFO 380: Product and Information Systems Management. We designed a sustainability reporting system for Meridian Retail Group, a fictional retailer operating twelve data centers with a net-zero carbon commitment for 2040.</p>
+                <p>Working from a course scenario and mock stakeholder interviews, we developed an executive briefing, product vision, prioritized backlog, data models, and an interactive dashboard prototype. My work included product documentation, user personas, strategic priorities, a three-sprint plan, and a mock Excel dataset.</p>
             </section>
-            <section>
+
+            <section id="problem">
                 <h2>Problem</h2>
-                <p>
-                    Meridian Retail Group's (MRG) current system perpetuates problems such as ineffective data collection,
-                    delayed data reporting, and lack of sustainability and environmental practices. This affects customer
-                    and investor trust, causes sustainability analysts to overly depend on error prone human labor, exposes
-                    compliance and legal teams to larger threats in regulations, and hinders progress towards their net-zero
-                    carbon commitment goal by 2040. Implementing the Data Center Sustainability Management System (DCSMS)
-                    presents an opportunity to provide a centralized source of standardized data reporting across all twelve
-                    data centers. Additionally, DCSMS will aid MRG to target areas for environmental improvement. The DCSMS
-                    will position MRG to maintain customer and investor confidence, meet regulatory demands, and uphold its
-                    commitment to environmental responsibility.
-                </p>
+                <p>MRG’s sustainability data was scattered across facilities, collected through different tools, and reported in inconsistent formats. In the scenario, analysts spent most of their time finding and cleaning data, while compiling the annual sustainability report took about three months.</p>
+                <p>Facility managers needed a reliable way to submit measurements, analysts needed comparable data, and executives needed a clear picture of environmental performance. Compliance teams also needed to trace reported numbers back to their sources. A dashboard would only be useful if the data behind it was consistent and trustworthy.</p>
             </section>
-            <section>
+
+            <section id="solution">
                 <h2>Solution</h2>
-                    <h3>Stakeholder Analysis</h3>
-                        <p>All analysis is derived from mock interviews.</p>
-                        <ul>
-                            <li>
-                                <strong>Chief Sustainability Officer (CSuO):</strong>
-                                        Responsible for driving MRG's net-zero carbon commitment and ensuring sustainability
-                                        strategy is being executed across all data centers.
-                            </li>
-                            <li>
-                                <strong>VP of IT Infrastructure:</strong>
-                                        Oversees the systems, servers, and infrastructure powering MRG's data centers.
-                            </li>
-                            <li>
-                                <strong>Chief Information Officer (CIO):</strong>
-                                        Accountable for overall technology strategy and ensures reporting systems align with
-                                        business goals.
-                            </li>
-                            <li>
-                                <strong>Data Center Facilities Managers (DCFM):</strong>
-                                        Responsible for daily operations within facilities such as power distribution, cooling
-                                        systems, and equipment maintenance.
-                            </li>
-                            <li>
-                                <strong>Sustainability Analysts:</strong>
-                                        Track, analyze, and report environmental performance data across MRG's data centers.
-                            </li>
-                            <li>
-                                <strong>Compliance & Legal Team:</strong>
-                                Ensures MRG is compliant to regulatory and sustainability reporting standards.
-                            </li>
-                            <li>
-                                <strong>Chief Security Officer (CSO):</strong>
-                                        Responsible for ensuring that sustainability reporting systems do not introduce security
-                                        threats to the organization.
-                            </li>
-                        </ul>
-                    <h3>Pain Points</h3>
-                        <p>
-                            MRG has large amounts of data that is manually gathered, there are few automated processes, and no
-                            centralized source of data. This causes a delay in data reporting and worsens the audit process.
-                        </p>
-                        <p>
-                            <strong>Data fragmentation</strong> - There is no standardized way of reporting environmental data
-                            from data centers. A Sustainability Analyst noted that most of their time was spent locating,
-                            cleaning, and standardizing data.
-                        </p>
-                        <p>
-                            <strong>Increased data scrutiny</strong> - There are increased environmental requirements requiring
-                            easy auditing of environmental data. Currently, the CSuO notes that there's little understanding of
-                            data center footprint, negatively impacting audits and company image.
-                        </p>
-                        <p>
-                            <strong>Time constraints</strong> - Current environmental reporting takes about 3 months and requires
-                            manual data collection, any data reported is already out of date.
-
-                        </p>
-                    <h3>Recomendations</h3>
-                        <p>
-                            We recommend a system that automates data collection for Sustainability Analysts, while standardizing
-                            both the units and types of data recorded. This system would streamline reporting processes and improve
-                            consistency across all data centers. Direct Data Pipeline: Establish an automated pipeline that
-                            collects, cleans, and consolidates environmental data from data centers in real time. Auditable
-                            Reporting: Develop reporting tools that automatically format and store environmental data in
-                            compliance-ready formats, ensuring that environmental information is accessible for government audits.
-                            Process Transparency & Data Security: Identify where data is estimated or automatically measured.
-                            Ensure role-based access control on all environmental data.
-
-                        </p>
+                <p>We proposed a centralized system that collects, standardizes, validates, and displays sustainability data. Our main design decision was to prioritize data quality and visibility before more advanced reporting features.</p>
+                <h3>Collect data across different facilities</h3>
+                <p>The first planned sprint focused on API connections to existing building and energy management systems, with manual entry for facilities whose tools could not support automated collection. This kept older facilities within the proposed workflow.</p>
+                <h3>Standardize and validate before reporting</h3>
+                <p>The second planned sprint focused on consistent units, facility names, and calculations. In our workflow, valid records move into a central environmental data warehouse, while incorrect entries are flagged for correction. The data dictionary defines fields such as facility location, reporting date, energy use, water use, and carbon emissions.</p>
+                <h3>Make the data useful to stakeholders</h3>
+                <p>The third planned sprint brought the data into MRG’s existing Azure environment for querying and dashboards, alongside planning for auditable reporting. We used Jira to connect user stories and priorities to the sprint plan, and focused the Figma prototype on the analyst dashboard.</p>
             </section>
-            <section>
-            <h2>Product</h2>
 
+            <section id="product">
+                <h2>Product</h2>
+                <p>The final deliverable is a Figma prototype of the Sustainability Analytics dashboard, supported by workflow and data flow diagrams, a data dictionary, and a prioritized product backlog.</p>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>See the overall footprint</h3>
+                        <p>The overview brings energy consumption, water consumption, and carbon emissions into one view. Summary cards and monthly trend charts let stakeholders review environmental performance across all data centers.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Sustainability overview">
+                        <img src="../assets/dcsms-overview.png" alt="DCSMS prototype showing all-data-center metrics and monthly energy and water trends" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>Focus on a facility</h3>
+                        <p>A data center selector narrows the dashboard to a specific facility. The Dublin view shows monthly totals, changes from the previous period, and daily energy trends to help analysts investigate local performance.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Facility analytics">
+                        <img src="../assets/dcsms-facility.png" alt="DCSMS Dublin facility prototype with energy, water, and carbon metrics and a daily energy chart" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>Inspect the underlying values</h3>
+                        <p>The raw data view presents dated records with explicit units alongside the visualizations. It gives analysts a way to inspect individual measurements when they need more detail than a summary chart provides.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Raw sustainability data">
+                        <img src="../assets/dcsms-raw-data.png" alt="DCSMS raw data table showing dates, energy in kilowatt-hours, carbon emissions in kilograms, and water usage in cubic meters" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <h3>What the prototype demonstrates</h3>
+                <p>The prototype shows how standardized sustainability data could be organized and explored. Automated ingestion, the Azure pipeline, and audit-ready report generation remain proposed system capabilities. The dashboard uses sample data; improvements in reporting speed, data accuracy, and environmental performance were goals rather than measured outcomes.</p>
             </section>
+
+            <section id="whats-next">
+                <h2>So what’s next?</h2>
+                <p>Our next priority would be auditability: letting someone trace a reported metric back to its source and understand how it was transformed. We left audit report generation out of the prototype so we could first focus on gathering, cleaning, and displaying the data.</p>
+                <p>The proposed roadmap progresses from data collection to transformation, visualization, and auditability. Further work would also strengthen the manual-entry workflow for facilities without API access and evaluate the design with its intended users.</p>
+                <figure class="project-roadmap">
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge DCSMS proposed roadmap">
+                        <img src="../assets/DCSMSRoadmap.png" alt="Proposed DCSMS roadmap: data collection in Q3 2026, data pipeline in Q4 2026, visualization in Q1 2027, and auditability in Q2 2027" width="2192" height="1080" loading="lazy" decoding="async">
+                    </button>
+                    <figcaption>Proposed delivery roadmap from our final presentation.</figcaption>
+                </figure>
+            </section>
+        </article>
+        <section class="actions" aria-label="More projects">
+            <a class="pill" href="../index.html#projects">All projects</a>
         </section>
-    </body>
+    </main>
+    <dialog class="image-viewer" aria-label="Enlarged screenshot">
+        <button class="image-viewer-image" type="button" aria-label="Close enlarged screenshot">
+            <img alt="">
+        </button>
+    </dialog>
+</body>
 </html>

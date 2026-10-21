@@ -1,62 +1,41 @@
-html {
-    scroll-behavior: smooth;
+.project-hero h1,
+h2, h3 {
+    color: #005b99;
 }
 
-body {
-    font-family: 'Courier New', Courier, monospace;
-    margin-right: 400px;
-    margin-left: 400px;
-}
-h1 {
-    text-align: center;
-    margin-top: 350px;
-    color: #0091ff;
-    font-size: 36px;
+.project-facts dt {
+    color: #005b99;
 }
 
-.downArrow {
-    animation: float 1s ease-in-out infinite alternate;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-@keyframes float {
-    from {
-        transform: translate(-50%, -50%) translateY(1%);
-    }
-    to {
-        transform: translate(-50%, -50%) translateY(100%);
-    }
+.project-demo {
+    width: auto;
+    min-height: 50px;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    background: #005b99;
+    border-color: #005b99;
 }
 
-.bodyHeader {
-    color: #0091ff;
-    display: flex;
-    gap: 15px;
+.project-demo:hover,
+.project-demo:focus-visible {
+    background: #004675;
 }
 
-.timeline {
-    text-align: right;
+.project-demo:focus-visible {
+    outline-color: #0091ff;
 }
 
-.read {
-    text-align: center;
+.project-roadmap {
+    margin: 2rem 0 0;
 }
 
-.body {
-    margin-top: 600px;
+.project-roadmap .solution-image img {
+    max-height: none;
+    width: 100%;
 }
-.context {
-    padding-top: 50px;
-}
-.roadmap {
-    width: 500px;
-    height: 250px;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    border: 2px, solid, black;
-    border-radius: 10px;
+
+.project-roadmap figcaption {
+    margin-top: 0.75rem;
+    color: #595959;
+    font-size: 0.875rem;
 }
