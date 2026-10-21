@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Jackson Cheung</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <script src="assets/js/circles.js" defer></script>
+    <script src="assets/js/contact.js" defer></script>
+</head>
 
-    <body>
-        about 
-    </body>
+<body class="about-page">
+    <div class="circles" aria-hidden="true">
+        <div class="circle circle--right-1 drift-circle"></div>
+        <div class="circle circle--right-2 drift-circle"></div>
+        <div class="circle circle--right-3 drift-circle"></div>
+        <div class="circle circle--left-1 drift-circle"></div>
+        <div class="circle circle--left-2 drift-circle"></div>
+        <div class="circle circle--left-3 drift-circle"></div>
+    </div>
+
+    <header class="capsule">
+        <a class="capsule-name" href="index.html">Jackson Cheung</a>
+        <nav aria-label="Primary">
+            <ul class="capsule-links">
+                <li><a href="about.html" aria-current="page">About</a></li>
+                <li><a href="https://www.linkedin.com/in/jacksoncheung123" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-intro" aria-labelledby="about-heading">
+            <h1 id="about-heading">Hey There!</h1>
+            <div class="about-profile">
+                <img class="about-photo" src="assets/aboutPhoto.JPG" alt="Portrait of Jackson Cheung">
+                <div class="about-copy">
+                    <p>
+                        Hello! Nice to meet you! My name is Jackson and I am currently in my second year at the University of Washington studying informatics. What is informatics? It's
+                        essentially a combination of a little computer science, information science, and some human centered design. To put it short, I'm learning how technology is designed
+                        so that I can potentially make it better!
+                    </p>
+                    <p>Outside of my academic life, I enjoy playing way too much tennis, uncordinated roadtrips, cooking good food, and eating it!</p>
+                </div>
+            </div>
+            <a class="scroll-arrow" href="#more-about">
+                <img src="assets/downArrow.png" alt="Read more about me">
+            </a>
+        </section>
+
+        <!-- Replace each heading and paragraph with your own content. -->
+        <section class="about-details" id="more-about" aria-label="More about me">
+            <article class="about-card">
+                <span class="about-number" aria-hidden="true">01</span>
+                <h2>Background</h2>
+                <p>
+                    My main background is in tech, with experience using Java, Python, R, and SQL. I also really enjoy design and product management! I'm very comfortable 
+                    using Figma and have worked with Agile methodologies and Jira on several projects.
+                </p>
+            </article>
+            <article class="about-card">
+                <span class="about-number" aria-hidden="true">02</span>
+                <h2>Interests</h2>
+                <p>
+                    I'm really interested in UX/UI design, programming fun projects, and building things that are useful to me and others. I love combining creativity
+                     and technology, whether that's designing intuitive user experiences, making things look aesthetic, or bringing an idea to life through code. I 
+                     enjoy projects that let me be creative while also solving real problems!
+                </p>
+            </article>
+            <article class="about-card">
+                <span class="about-number" aria-hidden="true">03</span>
+                <h2>What comes next?</h2>
+                <p>Right now, most of my focus is on graduating and hopefully finding a job that I'm excited about! Along the way, I see myself taking on more projects,
+                     collaborating with new people, making mistakes, and learning as much as I can. I'm excited to keep growing, trying new things, and hopefully 
+                     celebrate a few successes along the way!
+                </p>
+            </article>
+        </section>
+
+        <section class="actions" aria-label="Projects and contact">
+            <a class="pill" href="index.html#projects">Projects</a>
+            <button class="pill" id="contact" type="button" aria-live="polite">Contact</button>
+        </section>
+    </main>
+</body>
 </html>

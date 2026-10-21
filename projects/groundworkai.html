@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroundworkAI | Jackson Cheung</title>
+    <meta name="description" content="GroundworkAI — a DubHacks 2026 team project connecting AI-assisted road-damage detection with human review and repair coordination.">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/groundworkai.css">
+    <script src="../assets/js/image-viewer.js" defer></script>
+</head>
+<body>
+    <header class="capsule">
+        <a class="capsule-name" href="../index.html">Jackson Cheung</a>
+        <nav aria-label="Primary">
+            <ul class="capsule-links">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://www.linkedin.com/in/jacksoncheung123" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero project-hero" aria-labelledby="project-heading">
+            <h1 id="project-heading">GroundWorkAI</h1>
+            <p class="hero-desc">Street imagery to actionable road repair reports.</p>
+            <p class="project-summary">Exploring how computer vision can help local governments identify road damage and coordinate repairs.</p>
+            <a class="pill project-demo" href="https://ground-work-ai.vercel.app/#inspection-map" target="_blank" rel="noopener noreferrer">Try the demo <span aria-hidden="true">↗</span></a>
+            <a class="scroll-arrow" href="#context">
+                <img src="../assets/downArrow.png" alt="Read the GroundworkAI case study">
+            </a>
+        </section>
+
+        <article class="case-study" aria-label="GroundworkAI case study">
+            
+
+            <dl class="project-facts">
+                <!-- <div><dt>Project</dt><dd>DubHacks 2026 · Team prototype</dd></div>
+                <div><dt>Team</dt><dd>Shivram Venkatachalam, Samantha Oh, Jackson Cheung, Savannah Lee</dd></div> -->
+                <div><dt>Tools</dt><dd>React, Leaflet, Python, FastAPI, Ultralytics YOLO, SQLite, Mapillary</dd></div>
+            </dl>
+
+            <section id="context">
+                <p class="section-number" aria-hidden="true">01</p>
+                <h2>Context</h2>
+                <p>GroundworkAI is a team project my team built for DubHacks 2026. We explored how street imagery and computer vision could help identify road damage and turn potential issues into reports that people can review and act on.</p>
+                <p>The project uses detection, map inspection, and repair coordination and turns it all into one workflow. The goal is to support safer, more accessible streets by helping local governments find and organize potential maintenance.</p>
+            </section>
+
+            <section id="problem">
+                <p class="section-number" aria-hidden="true">02</p>
+                <h2>Problem</h2>
+                <p>Finding a crack or pothole is only the first step toward repairing it. A report also needs evidence, a location, a review decision, and a way to hand the issue off to the people doing the work.</p>
+                <p>We approached this as a workflow problem: how could an image based detection become a repair task without losing the information needed to evaluate it? An AI model cannot soley predict whether a defect needs repair or how urgently a crew should respond.</p>
+            </section>
+
+            <section id="solution">
+                <p class="section-number" aria-hidden="true">03</p>
+                <h2>Solution</h2>
+                <p>GroundworkAI connects AI assisted detection with human review. Potential defects appear on a map, where reviewers can inspect the source image, check the highlighted damage, adjust the estimated location, and assign a repair priority.</p>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>Discover and detect</h3>
+                        <p>In live mode, users select a neighborhood on the map. A Python backend discovers Mapillary imagery in that area and runs a YOLO model to identify potential potholes and several types of cracks. Findings are saved as pending issues rather than automatically verified reports.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Discover and detect">
+                        <img src="../assets/discoverAndDetect.png" alt="GroundworkAI inspection map showing a detected road issue" width="3004" height="1918" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>Review the evidence</h3>
+                        <p>Each issue includes an image with a bounding box, model confidence, an estimated location, and a link to its Mapillary source. Reviewers can update the review status and correct coordinates. Repair priority starts unassigned and is chosen by a person, keeping model confidence separate from urgency.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the evidence">
+                        <img src="../assets/review.png" alt="Report review controls for location, repair priority, and verification" width="938" height="1584" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <div class="solution-step">
+                    <div class="solution-copy">
+                        <h3>Coordinate the repair</h3>
+                        <p>A coordinator can create a work order from a verified issue and assign it to a crew member. The work order view lets the team track progress while retaining the original evidence and location. Search, filters, and CSV export help organize the issues being reviewed.</p>
+                    </div>
+                    <button class="solution-image" type="button" aria-haspopup="dialog" aria-label="Enlarge screenshot: Coordinate the repair">
+                        <img src="../assets/workOrder.png" alt="Assigned work order with crack evidence and repair progress controls" width="1646" height="1826" loading="lazy" decoding="async">
+                    </button>
+                </div>
+            </section>
+
+            <section id="product">
+                <p class="section-number" aria-hidden="true">04</p>
+                <h2>Product</h2>
+                <p>The prototype includes a React dashboard with a Leaflet map, issue details, review controls, and a work order view. The live workflow uses FastAPI and SQLite to process imagery and preserve review decisions.</p>
+                <h3>A repeatable demo</h3>
+                <p>The default demo uses five saved Mapillary images with actual stored model predictions for cracks. This lets someone explore the review and work order workflow without running the model or configuring an API token.</p>
+                <h3>What the prototype demonstrates</h3>
+                <p>GroundworkAI demonstrates a path from a potential defect to a reviewed issue and an assigned repair task. The saved findings are model predictions, not verified field reports, and their locations remain estimates. The prototype does not establish detection accuracy or real-world repair outcomes.</p>
+                <p>The central design decision is to keep people involved at the points where judgment matters: confirming the evidence, setting priority, and coordinating the response.</p>
+            </section>
+            <section id="whats-next">
+                <p class="section-number" aria-hidden="true">05</p>
+                <h2>So whats next?</h2>
+                <p>Since we only had 24 hours to build GroundWorkAI, there are still some limitations. For now, it runs exclusively on sample data because of our limited time and resources. With more time, we'd love to train and improve our model using a larger, more diverse dataset to make it more accurate and useful in real scenarios.</p>
+
+            </section>
+        </article>
+
+        <section class="actions" aria-label="More projects">
+            <a class="pill" href="../index.html#projects">All projects</a>
+        </section>
+    </main>
+    <dialog class="image-viewer" aria-label="Enlarged screenshot">
+        <button class="image-viewer-image" type="button" aria-label="Close enlarged screenshot">
+            <img alt="">
+        </button>
+    </dialog>
+</body>
+</html>

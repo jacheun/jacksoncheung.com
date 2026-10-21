@@ -1,0 +1,108 @@
+/* Shared typography, colors, navigation, circles, and buttons come from home.css. */
+.about-page .capsule [aria-current="page"] {
+    color: var(--accent);
+}
+
+.about-intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 8rem 1.5rem 7rem;
+}
+
+.about-intro h1 {
+    margin: 0 0 3rem;
+    color: var(--accent);
+    font-size: clamp(2.5rem, 9vw, 6.25rem);
+    text-align: center;
+}
+
+.about-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+    width: min(900px, 100%);
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 4px solid var(--text);
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.about-copy {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.about-copy h2,
+.about-card h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+}
+
+.about-copy p,
+.about-card p {
+    margin: 0 0 1rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.about-copy p:last-child,
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.about-details {
+    display: grid;
+    gap: 3.5rem;
+    width: min(var(--content-width), calc(100% - 3rem));
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+    scroll-margin-top: 2rem;
+}
+
+.about-card {
+    padding: 2rem;
+    border: 4px solid var(--text);
+    border-radius: 12px;
+    background-color: rgb(255, 254, 254);
+}
+
+.about-number {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .about-profile {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        max-width: 40rem;
+    }
+
+    .about-photo {
+        width: min(240px, 100%);
+        margin: 0 auto;
+    }
+
+    .about-copy {
+        padding: 1rem;
+    }
+
+    .about-card {
+        padding: 1.5rem;
+    }
+}

@@ -4,8 +4,8 @@
     const elements = document.querySelectorAll('.drift-circle');
     if (!elements.length) return;
 
-    const RADIUS = 1000;
-    const MAX_TRAVEL = 100;
+    // Reference motion at a 900px short viewport edge.
+    let motionScale = 1;
     const STIFFNESS = 0.01;
     const DAMPING = 0.8;
 
@@ -35,8 +35,11 @@
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     function measure() {
+        motionScale = Math.min(document.documentElement.clientWidth,
+            elements[0].parentElement.clientHeight) / 900;
         circles.forEach(c => {
-            c.el.style.transform = 'none';
+            c.el.style.translate = 'none';
+            c.x = c.y = c.vx = c.vy = 0;
 
             const r = c.el.getBoundingClientRect();
 
@@ -63,11 +66,11 @@
                     mouse.y - c.cy
                 );
 
-                influence = Math.max(0, 1 - d / RADIUS);
+                influence = Math.max(0, 1 - d / (1000 * motionScale));
             }
 
-            const targetX = c.dirX * MAX_TRAVEL * influence;
-            const targetY = c.dirY * MAX_TRAVEL * influence;
+            const targetX = c.dirX * 100 * motionScale * influence;
+            const targetY = c.dirY * 100 * motionScale * influence;
 
             c.vx = (c.vx + (targetX - c.x) * STIFFNESS) * DAMPING;
             c.vy = (c.vy + (targetY - c.y) * STIFFNESS) * DAMPING;
@@ -81,8 +84,8 @@
             const floatY =
                 Math.cos(time * c.speedY + c.phaseY) * c.ampY;
 
-            c.el.style.transform =
-                `translate(${c.x + floatX}px, ${c.y + floatY}px)`;
+            c.el.style.translate =
+                `${c.x + floatX * motionScale}px ${c.y + floatY * motionScale}px`;
         });
 
         animationFrame = window.requestAnimationFrame(tick);
@@ -108,7 +111,7 @@
         }
 
         if (motionPreference.matches) {
-            circles.forEach(circle => circle.el.style.removeProperty('transform'));
+            circles.forEach(circle => circle.el.style.removeProperty('translate'));
             return;
         }
 

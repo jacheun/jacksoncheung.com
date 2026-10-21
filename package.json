@@ -4,7 +4,7 @@
     "private": true,
     "description": "Jackson Cheung's static portfolio website",
     "scripts": {
-        "check": "node --check assets/js/circles.js && node --check assets/js/contact.js && python3 scripts/check_site.py",
+        "check": "node --check assets/js/circles.js && node --check assets/js/contact.js && node --check assets/js/image-viewer.js && python3 scripts/check_site.py",
         "start": "python3 -m http.server 8000 --bind 127.0.0.1"
     }
 }

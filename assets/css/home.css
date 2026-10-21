@@ -50,7 +50,7 @@ main {
 
 /* ==========================================================================
    Background circles
-   Positions are percentages of the first screen, same as before.
+   Scale the corner clusters with the shorter viewport dimension.
    ========================================================================== */
 .circles {
     position: absolute;
@@ -58,6 +58,8 @@ main {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100svh;
+    --circle-unit: min(1vw, 1svh);
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -77,13 +79,19 @@ main {
     pointer-events: none;
 }
 
-.circle--right-1 { top: -10%; right: -10%; --size: 45vh; --color: var(--circle-light); }
-.circle--right-2 { top: 22%;  right: -10%; --size: 30vh; --color: var(--circle-mid); }
-.circle--right-3 { top: -20%; right: 9%;   --size: 35vh; --color: var(--circle-dark); }
+/* Anchors describe circle centers; animation adds an offset without moving them. */
+.circle--right-1 { top: calc(12.5 * var(--circle-unit)); right: 5%;  --size: calc(45 * var(--circle-unit)); --color: var(--circle-light); }
+.circle--right-2 { top: calc(37 * var(--circle-unit));   right: -1%; --size: calc(30 * var(--circle-unit)); --color: var(--circle-mid); }
+.circle--right-3 { top: calc(-2.5 * var(--circle-unit)); right: 20%; --size: calc(35 * var(--circle-unit)); --color: var(--circle-dark); }
 
-.circle--left-1  { top: -20%; right: 80%;  --size: 50vh; --color: var(--circle-light); }
-.circle--left-2  { top: -12%; right: 70%;  --size: 24vh; --color: var(--circle-mid); }
-.circle--left-3  { top: 18%;  right: 90%;  --size: 35vh; --color: var(--circle-dark); }
+.circle--left-1  { top: calc(5 * var(--circle-unit));    left: 4%;   --size: calc(50 * var(--circle-unit)); --color: var(--circle-light); }
+.circle--left-2  { top: 0;                             left: 22%;  --size: calc(24 * var(--circle-unit)); --color: var(--circle-mid); }
+.circle--left-3  { top: calc(35.5 * var(--circle-unit)); left: 1%;   --size: calc(35 * var(--circle-unit)); --color: var(--circle-dark); }
+
+/* Right-side anchors also refer to the center, rather than the left edge. */
+.circle[class*="circle--right-"] {
+    transform: translate(50%, -50%);
+}
 
 /* ==========================================================================
    Header capsule
@@ -249,8 +257,7 @@ main {
 .project-card--timer { --hover: #383a3d; }
 .project-card--dcsms { --hover: #295291; }
 .project-card--crime { --hover: #e60000; }
-.project-card--dive  { --hover: #1100ff; }
-
+.project-card--groundworkai  { --hover: #04380e }
 /* ==========================================================================
    Action buttons (resume / note / contact)
    ========================================================================== */
@@ -271,7 +278,6 @@ main {
     background-color: #fff;
     border: 1px solid var(--border);
     border-radius: 60px;
-    box-shadow: 0 4px 8px var(--shadow);
     color: var(--text);
     font: bold 1.125rem var(--font-mono);
     text-transform: uppercase;

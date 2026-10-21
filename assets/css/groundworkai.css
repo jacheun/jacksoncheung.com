@@ -1,0 +1,214 @@
+
+.project-hero h1 {
+    font-size: clamp(2rem, 8vw, 5.5rem);
+    color: #04380e;
+    overflow-wrap: anywhere;
+}
+
+h2, h3 {
+    color: #04380e;
+}
+
+.project-summary {
+    max-width: 32rem;
+    margin: 1.5rem 0 0;
+    color: #595959;
+    line-height: 1.6;
+}
+
+.project-demo {
+    gap: 0.75rem;
+    margin-top: 2rem;
+    background: #04380e;
+    border-color: #04380e;
+    color: #fff;
+}
+
+.project-demo:hover,
+.project-demo:focus-visible {
+    background: #0b5019;
+    color: #fff;
+}
+
+.project-demo:focus-visible {
+    outline: 3px solid #3eb96b;
+    outline-offset: 4px;
+}
+
+.case-study {
+    width: min(760px, calc(100% - 3rem));
+    margin: 0 auto 5rem;
+    line-height: 1.8;
+}
+
+.case-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.case-nav a {
+    color: #1100cc;
+    text-underline-offset: 0.25rem;
+}
+
+.case-study section {
+    padding: 3rem 0;
+    border-bottom: 1px solid #dedede;
+    scroll-margin-top: 2rem;
+}
+
+.section-number {
+    margin: 0;
+    color: #3eb96b;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.case-study h2 {
+    margin: 0.25rem 0 1rem;
+    font-size: 2rem;
+}
+
+.case-study h3 {
+    margin: 2rem 0 0.5rem;
+}
+
+.case-study section > p:not(.section-number) {
+    margin: 0 0 1.25rem;
+}
+
+.project-facts {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 2rem 0;
+    border-bottom: 1px solid #dedede;
+}
+
+.project-facts dt {
+    color: #42744d;
+    font-weight: bold;
+}
+
+.project-facts dd {
+    margin: 0.25rem 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Pair each solution step with a compact, uncropped screenshot. */
+.solution-step {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.solution-copy h3 {
+    margin-top: 0;
+}
+
+.solution-copy p {
+    margin: 0;
+}
+
+.solution-image {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.solution-image img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+    .solution-step {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .solution-image {
+        justify-self: start;
+        max-width: 320px;
+    }
+}
+
+.solution-image {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+html:has(.image-viewer[open]) {
+    overflow: hidden;
+}
+
+.image-viewer {
+    max-width: 96vw;
+    max-height: 96vh;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    overflow: visible;
+    background: transparent;
+}
+
+.image-viewer::backdrop {
+    background: rgb(0 0 0 / 75%);
+    animation: viewer-backdrop-in 300ms ease both;
+}
+
+.image-viewer.is-closing::backdrop {
+    animation: viewer-backdrop-out 300ms ease both;
+}
+
+@keyframes viewer-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes viewer-backdrop-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.image-viewer-image {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-out;
+}
+
+.image-viewer-image img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    transform-origin: top left;
+    object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .image-viewer::backdrop,
+    .image-viewer.is-closing::backdrop {
+        animation: none;
+    }
+}
